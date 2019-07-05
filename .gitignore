@@ -48,6 +48,10 @@ debian/backy2.substvars
 debian/backy2/
 debian/files
 debian/debhelper-build-stamp
-dist
+venv
 .github-access-token
 debian/.debhelper
+__pycache__
+.idea
+.vscode
+test/*.deb

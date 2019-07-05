@@ -1,3 +1,10 @@
+backy2 (2.9.18) unstable; urgency=low
+
+  * Build automation using docker
+  * Test automation using docker
+
+ -- Jair de Souza Junior  Tue, 05 Jul 2019 12:37:05 +0300
+
 backy2 (2.9.17) unstable; urgency=low
 
   * Release automation

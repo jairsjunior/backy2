@@ -1,0 +1,32 @@
+version: '3.5'
+
+services:
+
+  backy2-api:
+    image: jairsjunior/ceph-backy2-test
+    build: .
+    environment:
+      - LOG_LEVEL=debug
+      # - PRE_BACKUP_COMMAND=dd if=/dev/zero of=/backup-source/TESTFILE bs=100MB count=2
+      # - POST_BACKUP_COMMAND=rm /backup-source/TESTFILE
+      - PRE_BACKUP_COMMAND=rbd snap create volumes/imagetest-3@backup
+      - POST_BACKUP_COMMAND=rbd snap rm volumes/imagetest-3@backup
+      - SOURCE_DATA_PATH=rbd://volumes/imagetest-3@backup
+      - PROTECT_YOUNG_BACKUP_DAYS=0
+      # - INDEX_DB_ADDRESS=/var/lib/backy2/backy.sqlite
+      - TARGET_DATA_BACKEND=azureblob
+      # - S3_AWS_HTTPS=false
+      # - S3_AWS_HOST=s3proxy
+      # - S3_AWS_PORT=80
+      # - S3_AWS_ACCESS_KEY_ID=local-identity
+      # - S3_AWS_SECRET_ACCESS_KEY=local-credential
+      # - S3_AWS_BUCKET_NAME=ceph-backy2-test
+      - AZURE_ACCESS_KEY_ID=local-identity
+      - AZURE_SECRET_ACCESS_KEY=local-credential
+      - AZURE_BUCKET_NAME=ceph-backy2-test
+      - SIMULTANEOUS_WRITES=5
+      - SIMULTANEOUS_READS=10
+
+  
+  
+  

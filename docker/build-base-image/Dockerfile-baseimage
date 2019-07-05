@@ -1,0 +1,5 @@
+FROM python:stretch
+
+RUN apt-get update && apt-get -y install build-essential devscripts debhelper debmake python3-setuptools python3-all python3-pytest python3-alembic python3-dateutil python3-prettytable python3-psutil python3-setproctitle python3-shortuuid python3-sqlalchemy python3-boto python3-azure-storage
+
+CMD [ "tail", "-f", "/dev/null"]

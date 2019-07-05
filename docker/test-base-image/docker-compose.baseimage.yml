@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+
+  backy2-api:
+    image: jairsjunior/ceph-backy2-baseimage-test
+    build:
+      context: .
+      dockerfile: Dockerfile-baseimage
+
+  
+  
+  

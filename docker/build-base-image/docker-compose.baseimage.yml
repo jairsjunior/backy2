@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  backy2:
+    build: 
+      context: .
+      dockerfile: Dockerfile-baseimage
+    image: jairsjunior/backy2-base

@@ -13,8 +13,8 @@ all: build/backy2.pex deb
 deb:
 	fakeroot make -f debian/rules clean
 	fakeroot make -f debian/rules binary
-	mkdir -p dist
-	ln -f ../backy2_$(CURRENT_VERSION)_all.deb dist
+	# mkdir -p dist
+	# ln -f ../backy2_$(CURRENT_VERSION)_all.deb dist
 
 env: setup.py
 	virtualenv -p python3 env

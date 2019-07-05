@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 from setuptools import setup, find_packages
 
-version = '2.9.17'
+version = '2.9.18'
 
 setup(name='backy2',
     version=version,
@@ -37,22 +37,23 @@ Topic :: System :: Archiving :: Backup
     zip_safe=False,  # ONLY because of alembic.ini. The rest is zip-safe.
     install_requires=[
         'PrettyTable>=0.7.2',
-        'sqlalchemy>=1.0.8',
+        # 'sqlalchemy>=1.0.8',
         'psutil>=2.2.1',
         'shortuuid>=0.4.2',
         'setproctitle>=1.1.8',
         'python-dateutil>=2.6.0',
         'alembic',
-        #'boto>=2.38.0',
+        'azure-storage-blob',
+        'boto>=2.38.0',
         #'psycopg2>=2.6.1',
         #'pex==1.1.0',
         ],
-    # tests_require=[
-        # 'pytest-cov',
-        # 'pytest-capturelog',
-        # 'pytest-timeout',
-        # 'pytest',
-        # ],
+    tests_require=[
+        'pytest-cov',
+        'pytest-capturelog',
+        'pytest-timeout',
+        'pytest',
+        ],
     entry_points="""
         [console_scripts]
             backy2 = backy2.scripts.backy:main
